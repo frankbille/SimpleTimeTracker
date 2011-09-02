@@ -3,7 +3,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.restlet.ext.servlet.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.restlet.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.restlet.ext.servlet.jar" sourcepath="/Users/frankbille/Projects/SimpleTimeTracker/restlet-gae-2.0.9/src/org.restlet.ext.servlet"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.restlet.jar" sourcepath="/Users/frankbille/Projects/SimpleTimeTracker/restlet-gae-2.0.9/src/org.restlet"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/joda-time-2.0.jar" sourcepath="/Users/frankbille/Projects/SimpleTimeTracker/joda-time-2.0/joda-time-2.0-sources.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.codehaus.jackson.core.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.codehaus.jackson.mapper.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.restlet.ext.jackson.jar" sourcepath="/Users/frankbille/Projects/SimpleTimeTracker/restlet-gae-2.0.9/src/org.restlet.ext.jackson"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

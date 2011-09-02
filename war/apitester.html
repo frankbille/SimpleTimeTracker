@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>API Tester</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	function dumpData(data, parent) {
+		if (toString.call(data) === "[object Array]") {
+			var el = $("<ul>");
+			for (var i = 0; i < data.length; i++) {
+				var li = $("<li>");
+				dumpData(data[i], li);
+				el.append(li);
+			}
+			parent.append(el);
+		} else if (toString.call(data) === "[object Object]") {
+			console.log(toString.call(data));
+			console.log(data);
+			var el = $("<ul>");
+			for (member in data) {
+				var li = $("<li>");
+				li.append(member);
+				li.append(" = ");
+				dumpData(data[member], li);
+				el.append(li);
+			}
+			
+			parent.append(el);
+		} else {
+			parent.append(data);
+		}
+	}
+	
+	function setOutput(data, output) {
+		$("#output").text(output);
+		
+		var parsed = $("#parsed");
+		parsed.empty();
+		dumpData(data, parsed);
+	}
+	
+	$("#getTimes").click(function() {
+		$.ajax({
+			type : 'GET',
+			url : '/time',
+			dataType : 'json',
+			success : function(data, responseStatus, xhr) {
+				setOutput(data, xhr.responseText);
+			}
+		});
+	});
+	
+	$("#createAccount").click(function() {
+		$.ajax({
+			type : 'GET',
+			url : '/createaccount',
+			success : function(data, responseStatus, xhr) {
+				console.log(data);
+				console.log(xhr.responseText);
+				setOutput(data, xhr.responseText);
+			}
+		});
+	});
+});
+</script>
+<style type="text/css">
+pre#output {
+	width: 100%;
+	white-space: normal;
+}
+</style>
+</head>
+<body>
+
+<button id="createAccount">Create account</button>
+<button id="getTimes">Get /time</button>
+
+<h2>Raw response</h2>
+<pre id="output">
+</pre>
+
+<h2>Parsed response</h2>
+<div id="parsed"></div>
+
+</body>
+</html>
