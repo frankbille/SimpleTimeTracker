@@ -11,7 +11,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
 		<init-param>
 			<param-name>org.restlet.application</param-name>
-			<param-value>dk.frankbille.simpletimetracker.SimpleTimeTrackerApplication</param-value>
+			<param-value>dk.frankbille.simpletimetracker.api.rest.SimpleTimeTrackerRestApplication</param-value>
 		</init-param>
 	</servlet>
 
