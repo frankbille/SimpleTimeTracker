@@ -16,8 +16,6 @@ $(function() {
 			}
 			parent.append(el);
 		} else if (toString.call(data) === "[object Object]") {
-			console.log(toString.call(data));
-			console.log(data);
 			var el = $("<ul>");
 			for (member in data) {
 				var li = $("<li>");
@@ -52,13 +50,22 @@ $(function() {
 		});
 	});
 	
+	$("#toggleTime").click(function() {
+		$.ajax({
+			type : 'POST',
+			url : '/timer',
+			dataType : 'json',
+			success : function(data, responseStatus, xhr) {
+				setOutput(data, xhr.responseText);
+			}
+		});
+	});
+	
 	$("#createAccount").click(function() {
 		$.ajax({
 			type : 'GET',
 			url : '/createaccount',
 			success : function(data, responseStatus, xhr) {
-				console.log(data);
-				console.log(xhr.responseText);
 				setOutput(data, xhr.responseText);
 			}
 		});
@@ -76,6 +83,7 @@ pre#output {
 
 <button id="createAccount">Create account</button>
 <button id="getTimes">Get /time</button>
+<button id="toggleTime">Toggle time</button>
 
 <h2>Raw response</h2>
 <pre id="output">

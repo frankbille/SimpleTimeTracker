@@ -20,11 +20,11 @@ public class SimpleTimeTrackerRestApplication extends Application {
 		secureRouter.setVerifier(new AccountVerifier());
 		
 		Router securedRouter = new Router(getContext());
+		securedRouter.attach("/timer", TimerResource.class);
 		securedRouter.attach("/time", TimeResource.class);
 		secureRouter.setNext(securedRouter);
 
 		root.attach(secureRouter);
-		
 		
 		return root;
 	}
