@@ -1,0 +1,26 @@
+{
+	"extName" : {
+		"message" : "Simple Time Tracker",
+		"description" : "The name of the extension."
+	},
+	"setupDescription" : {
+		"message" : "It looks like you have never used Simple Time Tracker before on this machine. You might have used it before. If so, select 'Setup using existing account' below. If you are new to Simple Time Tracker, select 'Setup using new account'.",
+		"description" : "Description of how to set up a new time tracker."
+	},
+	"setupNewLink" : {
+		"message" : "Setup using new account",
+		"description" : "Label on the setup using new account link"
+	},
+	"setupExistingLink" : {
+		"message" : "Setup using existing account",
+		"description" : "Label on the setup using existing account link"
+	},
+	"startTimer" : {
+		"message" : "Start",
+		"description" : "Label on the button, when the timer can be started."
+	},
+	"stopTimer" : {
+		"message" : "Stop",
+		"description" : "Label on the button, when the timer can be stopped."
+	}
+}
