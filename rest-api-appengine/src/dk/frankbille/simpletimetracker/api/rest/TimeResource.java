@@ -1,7 +1,5 @@
 package dk.frankbille.simpletimetracker.api.rest;
 
-import java.util.List;
-
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
@@ -11,12 +9,10 @@ import dk.frankbille.simpletimetracker.domain.TimeEntry;
 public class TimeResource extends ServerResource {
 
 	@Get
-	public TimeEntry[] list() {
+	public TimeEntry latest() {
 		String accountKey = getRequest().getChallengeResponse().getIdentifier();
 		
-		List<TimeEntry> entries = TimeDao.getTimeEntries(accountKey);
-		
-		return entries.toArray(new TimeEntry[entries.size()]);
+		return TimeDao.getLatestTimeEntry(accountKey);
 	}
 	
 }
