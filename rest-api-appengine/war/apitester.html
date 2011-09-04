@@ -63,7 +63,7 @@ $(function() {
 	
 	$("#createAccount").click(function() {
 		$.ajax({
-			type : 'GET',
+			type : 'POST',
 			url : '/createaccount',
 			success : function(data, responseStatus, xhr) {
 				setOutput(data, xhr.responseText);
