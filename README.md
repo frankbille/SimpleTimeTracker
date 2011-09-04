@@ -11,3 +11,10 @@ on how many hours they have been working throughout a day.
 Simple Time Tracker will never grow more complicated than tracking starting,
 stopping, and entering specific times. It might get more clients and ways
 to enter time, but that's it. 
+
+License
+-------
+
+This software is licensed under [Apache Software License V2][asl2]
+
+[asl2]: http://apache.org/licenses/LICENSE-2.0
