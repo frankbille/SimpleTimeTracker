@@ -197,7 +197,7 @@ STT = {
 			var t2 = endTime.getTime();
 			var d = t2-t1;
 			var s = Math.floor(d/1000);
-			var m = Math.floor(d/(60*1000));
+			var m = Math.floor((d/(60*1000))%60);
 			var h = Math.floor(d/(60*60*1000));
 			
 			timeString = (""+h).length == 1 ? "0"+h : h;
